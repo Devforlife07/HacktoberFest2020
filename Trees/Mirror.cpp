@@ -20,6 +20,39 @@ struct Node* newNode(int data)
 } 
 
 
+void BST::case_c(node *par, node *loc)
+{
+    node *ptr, *ptrsave, *suc, *parsuc;
+    ptrsave = loc;
+    ptr = loc->right;
+    while (ptr->left != NULL)
+    {
+        ptrsave = ptr;
+        ptr = ptr->left;
+    }
+    suc = ptr;
+    parsuc = ptrsave;
+    if (suc->left == NULL && suc->right == NULL)
+        case_a(parsuc, suc);
+    else
+        case_b(parsuc, suc);
+    if (par == NULL)
+    {
+        root = suc;
+    }
+    else
+    {
+        if (loc == par->left)
+            par->left = suc;
+        else
+            par->right = suc;
+    }
+    suc->left = loc->left;
+    suc->right = loc->right;
+}
+ 
+
+
 void mirror(struct Node* node) 
 { 
 	if (node == NULL) 
