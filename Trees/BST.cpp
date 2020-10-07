@@ -249,6 +249,16 @@ void BST::case_b(node *par, node *loc)
 }
  
 //   Case C
+node* newNode(int data) 
+{ 
+	node* Node = new node(); 
+	Node->data = data; 
+	Node->left = NULL; 
+	Node->right = NULL; 
+		
+	return(Node); 
+} 
+
 void BST::case_c(node *par, node *loc)
 {
     node *ptr, *ptrsave, *suc, *parsuc;
