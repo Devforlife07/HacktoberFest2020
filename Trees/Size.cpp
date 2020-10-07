@@ -19,7 +19,7 @@ node* newNode(int data)
 	return(Node); 
 } 
 
-\int size(node* node) 
+int size(node* node) 
 { 
 	if (node == NULL) 
 		return 0; 
