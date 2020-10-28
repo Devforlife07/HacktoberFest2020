@@ -11,8 +11,10 @@ public class FactorialOfVeryBigInteger {
     }
 
     public static void main(String[] args) {
+    	System.out.print("Enter a number to get the Factorial: ");
         Scanner scanner = new Scanner(System.in);
         int N = scanner.nextInt();
-        System.out.println(factorial(N));
+        System.out.printf("The Factorial of %d is: %d ",N, factorial(N));
     }
+    
 }
